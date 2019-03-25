@@ -1,5 +1,22 @@
 <!--pages/Main/Main.wxml-->
-<view>
-  <image src='../Resource/girl1.jpg' style='width:100%;height:100%'></image>
+<view class='bgview'>
+
+  <image class='backgroundimage' src='../Resource/girl1.jpg' mode='aspectFill'>
+  </image>
+
+  <view class='cityname'>杭州市</view>
+  <view class='cityweather'>晴空万里</view>
+  <view class='temprature'>14</view>
+
+  <view class='weekday'>星期一</view>
+  <view class='temp-area'>18<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;</text>7</view>
+
+  <scroll-view 
+      class='today-weather' 
+      scroll-x='true'
+  >
+  
+  
+  </scroll-view>
 
 </view>
