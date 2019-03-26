@@ -4,6 +4,8 @@
   <image class='backgroundimage' src='../Resource/girl1.jpg' mode='aspectFill'>
   </image>
 
+  <view class='contentbgview'>
+  
   <view class='cityname'>杭州市</view>
   <view class='cityweather'>晴空万里</view>
   <view class='temprature'>14</view>
@@ -11,12 +13,25 @@
   <view class='weekday'>星期一</view>
   <view class='temp-area'>18<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;</text>7</view>
 
-  <scroll-view 
-      class='today-weather' 
-      scroll-x='true'
-  >
+<view class='linewihte' style='margin-top:10px'></view>
+    
+  <view class='weatherdetailarea'>
+  
+    <view wx:for="{{['1','2',3,4,5,6,7,8,9,10,11,12,13,14,15,16]}}" wx:for-index='index' wx:for-item='item' style='height:100px'>
+      <view class='timepoint'>{{item}}时</view>
+      <image class='weathericon' src='../Resource/cloudy-icon.jpg'></image>
+      <view class='weathertem'>{{item}}</view>
+
+    </view>
+
+</view>
+
+  
+<view class='linewihte' style='margin-top:10px'></view>
+
   
   
-  </scroll-view>
+  
+  </view>
 
 </view>
