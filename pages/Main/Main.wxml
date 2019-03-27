@@ -32,7 +32,7 @@
         <view wx:for="{{['星期五','星期六','星期日','星期一','星期二','星期三','星期四']}}" wx:for-index='index' wx:for-item='item' style='display:flex;flex-direction:row;width:100%'>
             <view style='margin-left:20px'>{{item}}</view>
             <image class='weathericon' src='../Resource/cloudy-icon.jpg' style=' align-content:center'></image>
-            <view style='margin-right:30px;text-align:right; align-self: right'>20<text decode='{{true}}' space='{{true}}'>&nbsp;&nbsp;&nbsp;</text> 10</view>
+            <view style='margin-right:30px;text-align:right;align-self:right'>20<text decode='{{true}}' space='{{true}}'>&nbsp;&nbsp;&nbsp;</text> 10</view>
         </view>
      
         <view class='linewhite' style='margin-top:2px'></view>
