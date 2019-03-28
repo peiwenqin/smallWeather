@@ -2,7 +2,8 @@
   "pages": [
     "pages/Main/Main",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/City/City"
   ],
   "window": {
     "backgroundTextStyle": "light",

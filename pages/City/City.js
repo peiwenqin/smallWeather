@@ -1,4 +1,4 @@
-// pages/Main/Main.js
+// pages/City/City.js
 Page({
 
   /**
@@ -8,23 +8,11 @@ Page({
 
   },
 
-
-  /**
-   * 监听点击事件
-   */
-  selectCityAction: event => {
-    console.log(`pages/City/City`);
-    // 注意: 坑爹的微信, app.json 中的页面配置不需要带 / , 跳转时需要带 / 
-    wx.navigateTo({
-      url: `/pages/City/City`
-    });
-  },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-     
+
   },
 
   /**

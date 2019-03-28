@@ -16,8 +16,28 @@ page {
   height: 100%;
   position: fixed;
   z-index: 1;
-  overflow: scroll;
 }
+
+.contentbgview .scrollContentbgView {
+  width: 100%; 
+  overflow: scroll;
+  background-color: #00f;
+}
+
+/* 设置footerview */
+.bgview .contentbgview .footerView {
+  margin-top: 0px;
+  width: 100%;
+  height: 40px;
+  background-color: #ff0;
+}
+
+.bgview .contentbgview .footerView .citySelect {
+  margin-right: 20px;
+  line-height: 40px;
+  width: 100px;
+}
+
 
 .cityname {
   padding-top: 20px;
@@ -68,7 +88,6 @@ page {
 
 .today-weather {
   margin-top: 10px;
-  background-color: 0xffff00;
   width: 100%;
   height: 100px;
 }
@@ -101,6 +120,7 @@ page {
 .weathericon {
   width: 30px;
   height: 30px;
+  align-content:center;
 }
 
 .weathertem {
@@ -120,7 +140,53 @@ page {
    line-height: 30px;
    font-size: 18px;
    color: #fff;
-   
+}
+
+.futureWeatherArea .weekWeather-container {
+  display:flex;
+  flex-direction:row;
+  width:100%;
+  justify-content:space-between;
+}
+
+.futureWeatherArea .weekWeather-container .tempArea-container {
+  text-align:right;
+  align-self:right;
+}
+
+.futureWeatherArea .weekWeather-container .tempArea-container .tempCount{
+  float: left;
+  margin-right: 20px;
+}
+
+.futureWeatherArea .todayWeatherDes {
+  margin-top:10px;
+  margin-left:20px;
+  margin-right:20px;
+  font-size:14px;
+  line-height:18px;
+}
+
+.futureWeatherArea .horizonTextvalue-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.futureWeatherArea .horizonTextvalue-container .leftTextValue-container {
+  float: left;
+  margin-top:10px;
+  margin-left:20px;
+  height: 50px;
+}
+
+.futureWeatherArea .horizonTextvalue-container .rightTextValue-container {
+  align-content: left;
+  margin-top:10px;
+  margin-right:150px;
+  height: 50px;
 }
 
 .specialTile {

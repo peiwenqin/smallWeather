@@ -5,61 +5,77 @@
   </image>
 
   <view class='contentbgview'>
-  
-    <view class='cityname'>杭州市</view>
-    <view class='cityweather'>晴空万里</view>
-    <view class='temprature'>14</view>
+      
+   <view class='scrollContentbgView'>
+       
+          <view class='cityname'>杭州市</view>
+          <view class='cityweather'>晴空万里</view>
+          <view class='temprature'>14</view>
 
-    <view class='weekday'>星期一</view>
-    <view class='temp-area'>18<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;</text>7</view>
+          <view class='weekday'>星期一</view>
+          <view class='temp-area'>18<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;</text>7</view>
 
-    <view class='linewhite' style='margin-top:10px'></view>
+          <view class='linewhite' style='margin-top:10px'></view>
     
-    <!-- 今日的24小时天气预报 -->
-      <view class='weatherDetailArea'>
+          <!-- 今日的24小时天气预报 -->
+          <view class='weatherDetailArea'>
   
-        <view wx:for="{{[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]}}" wx:for-index='index' wx:for-item='item' style='height:100px'>
-        <view class='timepoint'>{{item}}时</view>
-        <image class='weathericon' src='../Resource/cloudy-icon.jpg' style='margin-top:15px;margin-left:15px'></image>
-        <view class='weathertem'>{{item}}</view>
-      </view>
-    </view>
+                <view wx:for="{{[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]}}" 
+                      wx:for-index='index' 
+                      wx:for-item='item' style='height:100px'>
+                          <view class='timepoint'>{{item}}时</view>
+                          <image class='weathericon' src='../Resource/cloudy-icon.jpg' style='margin-top:15px;margin-left:15px'></image>
+                          <view class='weathertem'>{{item}}</view>
+                </view>
+           </view>
     <view class='linewhite' style='margin-top:10px'></view>
 
-
-   <!-- 接下来的七日天气 -->
+    <!-- 接下来的七日天气 -->
       <view class='futureWeatherArea'>
-        <view wx:for="{{['星期五','星期六','星期日','星期一','星期二','星期三','星期四']}}" wx:for-index='index' wx:for-item='item' style='display:flex;flex-direction:row;width:100%'>
-            <view style='margin-left:20px'>{{item}}</view>
-            <image class='weathericon' src='../Resource/cloudy-icon.jpg' style=' align-content:center'></image>
-            <view style='margin-right:30px;text-align:right;align-self:right'>20<text decode='{{true}}' space='{{true}}'>&nbsp;&nbsp;&nbsp;</text> 10</view>
+        <view class='weekWeather-container' 
+            wx:for="{{['星期五','星期六','星期日','星期一','星期二','星期三','星期四']}}" 
+            wx:for-index='index' 
+            wx:for-item='item'>
+              <view style='margin-left:20px'>{{item}}</view>
+              <image class='weathericon' src='../Resource/cloudy-icon.jpg'></image>
+              <view class='tempArea-container'>
+                    <view class='tempCount'>20</view>
+                    <view class='tempCount'>10</view>
+              </view>
         </view>
      
         <view class='linewhite' style='margin-top:2px'></view>
 
         <!--对今日天气的详细赘述  -->
-        <view style='font-size:14px;line-height:18px;margin-top:10px;margin-left:20px;margin-right:20px' >今天：当前月明星疏。气温18度；预计最高气温210度</view>
+        <view class='todayWeatherDes'>今天：当前月明星疏。气温18度；预计最高气温210度</view>
 
         <view class='linewhite' style='margin-top:10px'></view>
 
-        <view wx:for="{{[1,2,3,4,5]}}" wx:for-index='index'>
+        <view class='horizonTextvalue-container' 
+              wx:for="{{[1,2,3,4,5]}}" 
+              wx:for-index='index'>
         
-            <view style='margin-left:20px;margin-top:10px;float:left'>
-               <view class='specialTile'>小标题</view>
-               <view class='specialValue' style='margin-top:5px'>值</view>
-            </view>
+                <view class='leftTextValue-container'>
+                    <view class='specialTile'>1小标题</view>
+                    <view class='specialValue' style='margin-top:5px'>值</view>
+                </view>
 
-            <view style='margin-left:20px;margin-top:10px'>
-               <view class='specialTile'>小标题</view>
-               <view class='specialValue'  style='margin-top:5px'>值</view>
-            </view>
+                <view class='rightTextValue-container'>
+                    <view class='specialTile'>2小标题</view>
+                    <view class='specialValue' style='margin-top:5px'>值</view>
+                </view>
 
-            <view class='linewhite' style='margin-top:10px;margin-left:20px'></view>
+                <view class='linewhite' style='margin-top:10px;margin-left:20px'></view>
         
         </view>
-      
+      </view>  
+   
+   </view>
 
-      </view>
+   <view class='footerView'>
+       <view class='linewhite' style='margin-top:0px'></view>
+       <button class='citySelect' bindtap='selectCityAction'>选择城市</button>
+   </view>
 
   </view>
 </view>
