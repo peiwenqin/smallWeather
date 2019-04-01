@@ -4,6 +4,11 @@ page {
   height: 100%;
 }
 
+.bgview {
+  height: 100%;
+  width: 100%;
+}
+
 .bgview .backgroundimage {
     height: 100%;
     width: 100%;
