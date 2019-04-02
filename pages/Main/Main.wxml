@@ -8,24 +8,25 @@
       
    <view class='scrollContentbgView'>
        
-          <view class='cityname'>杭州市</view>
-          <view class='cityweather'>晴空万里</view>
-          <view class='temprature'>14</view>
+          <view class='cityname'>{{weather.city}}</view>
+          <view class='cityweather'>{{weather.data[0].wea}}</view>
+          <!-- 晴空万里 -->
+          <view class='temprature'>{{weather.data[0].tem}}</view>
 
-          <view class='weekday'>星期一</view>
-          <view class='temp-area'>18<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;</text>7</view>
+          <view class='weekday'>{{weather.data[0].week}}</view>
+          <view class='temp-area'>{{weather.data[0].tem1}}<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;</text>{{weather.data[0].tem2}}</view>
 
           <view class='linewhite' style='margin-top:10px'></view>
     
           <!-- 今日的24小时天气预报 -->
           <view class='weatherDetailArea'>
   
-                <view wx:for="{{[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]}}" 
+                <view wx:for="{{weather.data[0].hours}}" 
                       wx:for-index='index' 
                       wx:for-item='item' style='height:100px'>
-                          <view class='timepoint'>{{item}}时</view>
+                          <view class='timepoint'>{{item.day}}</view>
                           <image class='weathericon' src='../Resource/cloudy-icon.jpg' style='margin-top:15px;margin-left:15px'></image>
-                          <view class='weathertem'>{{item}}</view>
+                          <view class='weathertem'>{{item.tem}}</view>
                 </view>
            </view>
     <view class='linewhite' style='margin-top:10px'></view>
@@ -33,21 +34,21 @@
     <!-- 接下来的七日天气 -->
       <view class='futureWeatherArea'>
         <view class='weekWeather-container' 
-            wx:for="{{['星期五','星期六','星期日','星期一','星期二','星期三','星期四']}}" 
+            wx:for="{{weather.data}}" 
             wx:for-index='index' 
             wx:for-item='item'>
-              <view style='margin-left:20px'>{{item}}</view>
+              <view style='margin-left:20px'>{{item.week}}</view>
               <image class='weathericon' src='../Resource/cloudy-icon.jpg'></image>
               <view class='tempArea-container'>
-                    <view class='tempCount'>20</view>
-                    <view class='tempCount'>10</view>
+                    <view class='tempCount'>{{item.tem1}}</view>
+                    <view class='tempCount'>{{item.tem2}}</view>
               </view>
         </view>
      
         <view class='linewhite' style='margin-top:2px'></view>
 
         <!--对今日天气的详细赘述  -->
-        <view class='todayWeatherDes'>今天：当前月明星疏。气温18度；预计最高气温210度</view>
+        <view class='todayWeatherDes'>今天：{{weather.data[0].air_tips}}</view>
 
         <view class='linewhite' style='margin-top:10px'></view>
 

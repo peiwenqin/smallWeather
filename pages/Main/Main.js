@@ -1,4 +1,4 @@
-const { getweatherInfo } = require("../../utils/Weather.js")
+// const { getweatherInfo } = require("../../utils/Weather.js")
 
 // pages/Main/Main.js
 Page({
@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+      weather:{},
   },
 
 
@@ -26,11 +26,32 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-     getweatherInfo({
+    //  getweatherInfo({
+    //      //请求传参数
+         
+    //  });
+    //  console.log(homeData);
+    var that = this;
 
-     }).success(res => {
-console.log(res.data);
-     });
+    wx.request({
+      url: 'https://www.tianqiapi.com/api/?version=v1',
+      data: '',
+      header: {},
+      method: 'GET',
+      dataType: 'json',
+      responseType: 'text',
+      success: function (res) {
+        console.log(res.data);
+        that.setData({
+          weather: res.data,
+        })
+      },
+      fail: function (res) {
+        console.log(res.data);
+      },
+      complete: function (res) { },
+    })
+
   },
 
   /**
