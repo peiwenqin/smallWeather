@@ -31,8 +31,9 @@
            </view>
     <view class='linewhite' style='margin-top:10px'></view>
 
-    <!-- 接下来的七日天气 -->
       <view class='futureWeatherArea'>
+
+        <!-- 接下来的七日天气 -->        
         <view class='weekWeather-container' 
             wx:for="{{weather.data}}" 
             wx:for-index='index' 
@@ -47,24 +48,23 @@
      
         <view class='linewhite' style='margin-top:2px'></view>
 
-        <!--对今日天气的详细赘述  -->
+        <!--对今日天气的详细赘述和活动建议  -->
         <view class='todayWeatherDes'>今天：{{weather.data[0].air_tips}}</view>
-
-        <view class='linewhite' style='margin-top:10px'></view>
-
-        <view class='horizonTextvalue-container' 
-              wx:for="{{[1,2,3,4,5]}}" 
-              wx:for-index='index'>
         
-                <view class='leftTextValue-container'>
-                    <view class='specialTile'>1小标题</view>
-                    <view class='specialValue' style='margin-top:5px'>值</view>
+        <view class='linewhite' style='margin-top:10px'></view>
+        
+        <!-- 各类天气的指标值 -->
+        <view class='horizonTextvalue-container' 
+              wx:for="{{weather.data[0].index}}"
+              wx:for-item='item'   
+              wx:for-index='index'>
+
+                <view  class='leftTextValue-container'>
+                    <view class='specialTile'>{{item.title}}</view>
+                    <view class='specialValue' style='margin-top:5px'>{{item.desc}}</view>
                 </view>
 
-                <view class='rightTextValue-container'>
-                    <view class='specialTile'>2小标题</view>
-                    <view class='specialValue' style='margin-top:5px'>值</view>
-                </view>
+               
 
                 <view class='linewhite' style='margin-top:10px;margin-left:20px'></view>
         

@@ -7,6 +7,7 @@ page {
 .bgview {
   height: 100%;
   width: 100%;
+  /* overflow: hidden; */
 }
 
 .bgview .backgroundimage {
@@ -25,15 +26,16 @@ page {
 
 .contentbgview .scrollContentbgView {
   width: 100%; 
+  height: 90%;
   overflow: scroll;
-  background-color: #00f;
+  /* background-color: #00f; */
 }
 
 /* 设置footerview */
 .bgview .contentbgview .footerView {
   margin-top: 0px;
   width: 100%;
-  height: 40px;
+  margin-bottom: 0px;
   background-color: #ff0;
 }
 
@@ -201,7 +203,7 @@ page {
 }
 
 .specialValue {
-  font-size: 24px;
+  font-size: 18px;
   height: 30px;
   line-height: 30px;
   font-weight: bold;

@@ -37,7 +37,7 @@ Page({
       url: 'https://www.tianqiapi.com/api/?version=v1',
       data: '',
       header: {},
-      method: 'GET',
+      method: 'POST',
       dataType: 'json',
       responseType: 'text',
       success: function (res) {
